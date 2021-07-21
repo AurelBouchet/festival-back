@@ -1,12 +1,12 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "This template provides:",
   "main": "index.js",
   "scripts": {
     "start": "node -r dotenv/config index",
     "dev": "nodemon -r dotenv/config index.js",
-    "lint": "./node_modules/.bin/eslint --ext .js",
+    "lint": "eslint --ext .js",
     "test": "DB_NAME=databasename_test jest",
     "test:watch": "DB_NAME=databasename_test jest --watch"
   },
@@ -15,8 +15,10 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "dotenv": "^8.6.0",
+    "express": "^4.17.1",
+    "express-router": "^0.0.1",
+    "mysql2": "^2.2.5"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -45,5 +47,13 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AurelBouchet/festival-back.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AurelBouchet/festival-back/issues"
+  },
+  "homepage": "https://github.com/AurelBouchet/festival-back#readme"
 }
