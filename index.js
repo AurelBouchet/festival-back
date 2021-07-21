@@ -2,12 +2,12 @@ require('dotenv').config();
 const app = require('./app');
 
 const movieRoute = require('./routes/movie');
-const theatreRoute = require('./routes/theater');
+const theaterRoute = require('./routes/theater');
 
 const PORT = process.env.PORT || 8000;
 
 app.use('/movies', movieRoute);
-app.use('/theaters', theatreRoute);
+app.use('/theaters', theaterRoute);
 
 app.listen(PORT, (err) => {
   if (err) {
@@ -16,5 +16,3 @@ app.listen(PORT, (err) => {
     console.log(`Express server listening on ${PORT}`);
   }
 });
-
-console.log('coucou');
