@@ -23,8 +23,8 @@ const uploadPic = multer({
 
 router.post('/', uploadPic.single('picture'), (request, response) => {
   const movie = request.body;
-  const getPicture = `images/${movie.name}`;
-  const folder = `public/images/${movie.name}/`;
+  const getPicture = `images/${movie.director}-${Date.now()}`;
+  const folder = `public/images/${movie.director}-${Date.now()}/`;
   fs.mkdirSync(folder, { recursive: true });
   const picture = `${getPicture}/${request.file.originalname}`;
   fs.rename(request.file.path, `public/${picture}`, function (err) {
